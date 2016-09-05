@@ -1,0 +1,38 @@
+{
+  "name": "limit-size-stream",
+  "version": "0.0.0",
+  "description": "Limit the size of a stream",
+  "license": "MIT",
+  "repository": "kevva/limit-size-stream",
+  "author": {
+    "name": "Kevin Martensson",
+    "email": "kevinmartensson@gmail.com",
+    "url": "github.com/kevva"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "limit",
+    "max",
+    "size",
+    "stream"
+  ],
+  "dependencies": {
+    "is-stream": "^1.1.0"
+  },
+  "devDependencies": {
+    "ava": "*",
+    "get-stream": "^2.3.0",
+    "xo": "*"
+  },
+  "xo": {
+    "esnext": true
+  }
+}
