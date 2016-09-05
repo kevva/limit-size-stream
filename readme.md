@@ -18,7 +18,7 @@ const getStream = require('get-stream');
 const limitSizeStream = require('limit-size-stream');
 const stream = fs.createReadStream('unicorn.txt');
 
-getStream(limitStream(stream, '5')).then(str => {
+getStream(limitStream(stream, 5)).then(str => {
 	console.log(str);
 	//=> 'unico'
 });
