@@ -1,6 +1,6 @@
 {
   "name": "limit-size-stream",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Limit the size of a stream",
   "license": "MIT",
   "repository": "kevva/limit-size-stream",
