@@ -10,22 +10,25 @@ const limitSizeStream = (inputStream, limit, opts) => {
 	}
 
 	const stream = new PassThrough({objectMode: opts.objectMode});
-	let len = 0;
 
 	inputStream.pipe(stream);
 
-	stream.on('data', data => {
-		if (opts.objectMode) {
-			len++;
-		} else {
-			len += data.length;
-		}
+	if (typeof limit === 'number') {
+		let len = 0;
 
-		if (len >= limit) {
-			inputStream.unpipe(stream);
-			stream.end();
-		}
-	});
+		stream.on('data', data => {
+			if (opts.objectMode) {
+				len++;
+			} else {
+				len += data.length;
+			}
+
+			if (len >= limit) {
+				inputStream.unpipe(stream);
+				stream.end();
+			}
+		});
+	}
 
 	return stream;
 };

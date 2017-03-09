@@ -52,3 +52,17 @@ test('object', async t => {
 	t.is(ret.length, 2);
 	t.deepEqual(ret, [{}, {}]);
 });
+
+test('ignore undefined limit', async t => {
+	const stream = writeStream(true);
+
+	stream.write({});
+	stream.write({});
+	stream.write({});
+	stream.end();
+
+	const ret = await getStream.array(m.obj(stream));
+
+	t.is(ret.length, 3);
+	t.deepEqual(ret, [{}, {}, {}]);
+});
